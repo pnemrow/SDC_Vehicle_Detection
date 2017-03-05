@@ -5989,7 +5989,6 @@ non-vehicles/GTI/image1826.png
 non-vehicles/GTI/image1827.png
 non-vehicles/GTI/image1828.png
 non-vehicles/GTI/image1829.png
-non-vehicles/GTI/image183.png
 non-vehicles/GTI/image1830.png
 non-vehicles/GTI/image1831.png
 non-vehicles/GTI/image1832.png
