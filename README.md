@@ -15,13 +15,13 @@ The goals / steps of this project are the following:
 * Estimate a bounding box for vehicles detected.
 
 [//]: # (Image References)
-[image1]: ./examples/Spatial_Features_Car.png
-[image2]: ./examples/Spatial_Features_Not_Car.png
-[image3]: ./examples/Color_Histogram_Car.png
-[image4]: ./examples/Color_Histogram_Not_Car.png
-[image5]: ./examples/HOG_Y_Channel.png
-[image6]: ./examples/HOG_Cr_Channel.png
-[image7]: ./examples/HOG_Cb_Channel.png
+[image1]: ./examples/spatialcar.png
+[image2]: ./examples/NotCarSpatial.png
+[image3]: ./examples/colorhistcar.png
+[image4]: ./examples/colorhistnotcar.png
+[image5]: ./examples/hogy.png
+[image6]: ./examples/hogcr.png
+[image7]: ./examples/hogcb.png
 [image8]: ./examples/original_test_image.png
 [image9]: ./examples/original_test_with_grid.png
 [image10]: ./examples/original_test_identified_grid.png
