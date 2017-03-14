@@ -10,24 +10,24 @@ recent_heat_maps = []
 vehicle_list = []
 
 def detect_vehicles(img, svc, X_scaler):
-    y_windows = [(390, 510), (400,550),(460,800), (460,750)]
+    interest_regions = [(390, 510), (400,550),(460,800), (460,750)]
     scales = [1.5, 1.75,2, 3]
-    out_img, heat_map = find_cars(img, y_windows, scales, svc, X_scaler)
+    out_img, heat_map = find_cars(img, interest_regions, scales, svc, X_scaler)
     averaged_heat = average_heat_map(heat_map)
     labels = label(averaged_heat)
     draw_img = draw_labeled_bboxes(np.copy(img), labels)
     return draw_img
 
-def find_cars(img, y_windows, scales, svc, X_scaler):
+def find_cars(img, interest_regions, scales, svc, X_scaler):
     bboxes = []
     draw_img = np.copy(img)
     heat = np.zeros_like(img[:,:,0]).astype(np.float)
     img = img.astype(np.float32)/255
 
-    for scale, y_window in zip(scales, y_windows):
+    for scale, region_of_interest in zip(scales, interest_regions):
         
-        ystart = y_window[0]
-        ystop = y_window[1]
+        ystart = region_of_interest[0]
+        ystop = region_of_interest[1]
         img_tosearch = img[ystart:ystop,:,:]
         ctrans_tosearch = convert_color(img_tosearch)
         
@@ -93,7 +93,6 @@ def find_cars(img, y_windows, scales, svc, X_scaler):
                     bboxes.append(box)
 
     heat = add_heat(heat,bboxes) 
-    apply_threshold(heat, 0)
     heatmap = np.clip(heat, 0, 255)
     
     return draw_img, heatmap
